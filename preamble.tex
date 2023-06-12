@@ -1,0 +1,121 @@
+%\usepackage[eulermath, dottedtoc, listings, floatperchapter]{classicthesis}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newlfont}
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
+\usepackage{titling}
+
+
+% physics and math
+\usepackage{hyperref}
+\usepackage{amsmath}
+\numberwithin{equation}{chapter} % numera equazioni nella forma 1.23
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+
+\usepackage{float}
+
+% per pezzi di codice
+\usepackage{listings}
+\definecolor{veryLightGrey}{rgb}{0.9629411,0.9629411,0.9629411}
+\lstset{
+    inputpath=listings/,
+    language=bash,
+    basicstyle=\ttfamily\footnotesize,
+    commentstyle=\fontseries{lc}\selectfont\itshape\color{OliveGreen},
+    numbers=left,
+    numberstyle=\ttfamily\scriptsize,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{veryLightGrey},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=tb,
+    tabsize=4,
+    captionpos=t,
+    breaklines=false,
+    %commentstyle=\color{BrickRed},%\color{OliveGreen},
+    stringstyle=\color{BrickRed},
+    keywordstyle=\color{RoyalBlue}
+}
+
+% latex
+\usepackage{csquotes}
+\usepackage{pgf}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{geometry}
+%\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    ocgcolorlinks=true,
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+    citecolor=black,
+    pdftitle={Analytical and numerical study of polarons}
+}
+\usepackage{graphicx}
+
+\usepackage[capitalise]{cleveref}
+\usepackage{caption}
+\captionsetup[figure]{labelfont={bf, small}, textfont={small, sl}, position=bottom}
+\captionsetup[table]{labelfont={bf, small}, textfont={sl, small}, position=top}
+\usepackage{subcaption}
+
+\usepackage{xspace} % spaces after \newcommand
+
+\usepackage{appendix}
+
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\tikzsetexternalprefix{figures/}
+
+%bibliography
+\usepackage[backend=biber, citestyle=numeric-comp, url=false, eprint=false, sorting=none, backref=true]{biblatex}
+\addbibresource{Quantum_Gases.bib}
+
+
+% shortpaths
+\newcommand{\oper}[1]{\hat{#1}}
+\renewcommand{\vec}[1]{\mathbf{\boldsymbol{#1}}}
+\newcommand{\vers}[1]{\vec{\hat{#1}}}
+\newcommand{\adjoint}[1]{#1^\dagger}
+\newcommand{\adjop}[1]{\adjoint{\oper{#1}}}
+\newcommand{\sche}{Schr\"{o}dinger equation\xspace}
+\newcommand{\oh}{\frac{1}{2}}
+\newcommand{\rr}[1]{#1(\vec{r})}
+\newcommand{\dr}{\differential \vec{r}}
+\newcommand{\rrp}[1]{#1(\vec{r}')}
+\newcommand{\sches}{Schr\"{o}dinger equations\xspace}
+
+\DeclareSIUnit\angstrom{\protect \text {Å}}
+\DeclareSIUnit{\bohr}{\mu_B}
+
+
+% abstract definition
+\newenvironment{abstract}%
+{\cleardoublepage \null \vfill \begin{center}%
+        \bfseries \abstractname \end{center}}%
+{\vfill \null}
+
+\RequirePackage{setspace}
+
+\newcommand{\hsp}{\hspace{20pt}}
+
+\usepackage{titlesec}
+
+\newcommand*{\justifyheading}{\raggedleft}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\justifyheading}{\chaptertitlename\ \thechapter}
+{20pt}{\Huge}

@@ -1,0 +1,134 @@
+
+\setlength{\marginparwidth}{3cm}
+\newcommand{\TODO}[1]
+{\todo[prepend, caption={\textbf{Todo}}, size=\footnotesize]{\renewcommand{\baselinestretch}{0.85} \selectfont#1\par}}
+\newcommand{\REMARK}[1]
+{\todo[prepend, color=green, caption={\textbf{Remark}}, size=\footnotesize]{\renewcommand{\baselinestretch}{0.85} \selectfont#1\par}}
+
+\newcommand\keywords[1]{\gdef\@keywords{#1}}
+\newcommand\categories[1]{\gdef\@categories{#1}}
+\newcommand\supervisor[1]{\gdef\@supervisor{#1}}
+\newcommand\advisors[1]{\gdef\@advisors{#1}}
+\newcommand\email[1]{\gdef \@email{#1}}
+\newcommand\institute[1]{\gdef \@institute{#1}}
+\newcommand\thesistype[1]{\gdef \@thesistype{#1}}
+\newcommand\logo[1]{\gdef\@logo{#1}}
+\keywords{}
+\categories{}
+\logo{}
+
+\renewcommand\maketitle{
+    \hypersetup{pdfauthor=\@author}
+    \hypersetup{pdftitle=\@title}
+    \hypersetup{pdfkeywords=\@keywords}
+    \hypersetup{pdfsubject=A Computer Science Thesis}
+    \pagenumbering{roman}
+    %  \refstepcounter{part}
+    \begin{titlepage}%
+        \noindent
+        \includegraphics[viewport=8 0 185 55]{figures/eth_logo_black} \hfill
+        %\includegraphics[height = 2cm]{figures/HyquLogo2019.pdf}
+        \vspace{2cm}
+
+        \let\footnotesize\small
+        \let\footnoterule\relax
+        \let \footnote \thanks
+
+        \begin{center}
+            \begin{spacing}{1.8}
+                {\huge \bfseries \@title}
+            \end{spacing}
+
+            \large \@thesistype
+        \end{center}
+
+        \vspace{1cm}
+
+        \begin{center}
+            \large
+            \@author
+
+            \texttt{\small \@email}
+        \end{center}%
+
+        \vspace{0.5cm}
+        \begin{center}
+            \@institute
+        \end{center}
+
+        \vspace*{\fill}
+
+        \begin{minipage}[t]{0.47\textwidth}
+            \vfill
+            \ifdefined \@supervisor
+                \textbf{Supervisor:} \\[2pt] \@supervisor
+            \fi
+
+        \end{minipage}
+        %
+        \hfill
+        %
+        \begin{minipage}[t]{0.47\textwidth}\raggedleft
+            \vfill
+            \ifdefined \@advisors
+                \textbf{Advisors:} \\[2pt] \@advisors
+            \fi
+
+        \end{minipage}
+        \vspace{2cm}
+        \begin{center}
+            \@date
+        \end{center}
+    \end{titlepage}%
+    %\refstepcounter{page}	 	%kai
+    %\thispagestyle{plain}\@thanks
+
+
+    \setcounter{footnote}{0}%
+    \global\let\maketitle\relax
+    \global\let\thanks\relax
+    \global\let\@thanks\@empty
+    \global\let\title\relax
+    \global\let\@title\@empty
+    \global\let\author\relax
+    \global\let\@author\@empty
+    \global\let\date\relax
+    \global\let\@date\relax
+    \global\let\and\relax
+    \global\let\logo\relax
+    \global\let\@logo\relax
+    \global\let\email\relax
+    \global\let\@email\relax
+    \global\let\institute\relax
+    \global\let\@institute\relax
+    \global\let\supervisors\relax
+    \global\let\@supervisors\relax
+    \global\let\thesistype\relax
+    \global\let\@thesistype\relax
+}
+
+
+\thesistype{Semester Project} % Master's Thesis, Bachelor's Thesis, Semester Thesis, Group Project
+\title{Characterization of a phaseplate for the creation of a tophat potential}
+
+\author{Nicolò Montalti}
+\email{nmontalti@student.ethz.ch}
+
+\institute{
+    Quantum Optics Group\\[2pt]
+    Departement of Physics, D-PHYS \\[2pt]
+    ETH Zürich}
+
+% Optionally, you can put in your own logo here
+%\logo{\includegraphics[width=0.2\columnwidth]{figures/HyquLogo2019}}
+
+\supervisor{Prof. Tilman Esslinger}
+\advisors{Dr. Meng-Zi Huang\\ Mohsen Talebi}
+
+% Optionally, keywords and categories of the work can be shown (on the Abstract page)
+%\keywords{Keywords go here.}
+%\categories{ACM categories go here.}
+
+\date{\today}
+
+\maketitle
