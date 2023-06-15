@@ -46,7 +46,7 @@ Making use of the approximations explained above, in the limit $\delta  \gg \Ome
 \begin{equation}
     \vec{F}_\text{dip} = \left\langle \frac{\differential \vec{p}}{\differential t} \right\rangle = - \frac{\hbar}{2} \frac{\Omega}{\delta} \nabla \Omega
 \end{equation}
-We notice that the dipole force is proportional to the field strength and its gradient and inversely proportional to the detuning. Moreover, its sign depends on the sign of the detuning. Red-detuned light ($\delta < 0$) generates an attractive potential and can be used to create optical tweezers. This is exploited in our experiment for the creation of the cigar-shaped cloud. On the other hand, blue-detuned light ($\delta > 0$) generates a repulsive potential. This is what we need for the creation of the 2D channel. In the experiment, we use a \SI{660}{nm} laser, blue-detuned with respect to the Lithium atomic transition of \SI{671}{nm}.
+We notice that the dipole force is proportional to the field strength and its gradient, and inversely proportional to the detuning. Moreover, its sign depends on the sign of the detuning. Red-detuned light ($\delta < 0$) generates an attractive potential and can be used to create optical tweezers. This is exploited in our experiment for the creation of the cigar-shaped cloud. On the other hand, blue-detuned light ($\delta > 0$) generates a repulsive potential. This is what we need for the creation of the 2D channel. In the experiment, we use a \SI{660}{nm} laser, blue-detuned with respect to the Lithium atomic transition of \SI{671}{nm}.
 
 \section{Spatial light modulation}
 Now that we know how light interacts with atoms, we are interested in the techniques that can be used to arbitrary shape a light beam. At the basis of these techniques there is Forier optics, which will be explained in the next section. We will then look at the different tools that can be used to achieve this goal, focusing on the use of phaseplates.
@@ -62,9 +62,9 @@ where $\nu_x = k_x / 2\pi$, $\nu_y = k_y / 2\pi$ and
 \begin{equation}
     F(\nu_x,\nu_y) = \int \differential x \differential y f(x, y) e^{2\pi i(\nu_xx+\nu_yy)}
 \end{equation}
-Each plane wave travels in a direction $\theta_x = \sin^{-1}(k_x / k) = \sin^{-1}(\lambda \theta_x$) and $\theta_y = \sin^{-1}(k_y / k) = \sin^{-1}(\lambda \theta_y$) and has an amplitude $F(\nu_x, \nu_y)$
+Each plane wave travels in a direction $\theta_x = \sin^{-1}(k_x / k) = \sin^{-1}(\lambda \nu_x$) and $\theta_y = \sin^{-1}(k_y / k) = \sin^{-1}(\lambda \nu_y$) and has an amplitude $F(\nu_x, \nu_y)$
 
-One way to separate the Fourier components of a wave is by using a lens. A thin spherical lens transforms a plane wave incident on it into a paraboloidal wave focused on a point on the focal plane of the lens (Saleh and Teich Sec. 2.4 \cite{saleh1991}). As shown in \cref{fig:fourier}, a plane wave incident at a small angle $(\theta_x, \theta_y)$ if focused to the point$(x,y) = (\theta_x f, \theta_y f)$, where $f$ is the focal length of the lens. The complex amplitude $g(x,y)$ at $z=f$ is therefore proportional to the Fourier transform of $f(x,y)$ evaluated at $\nu_x = x / \lambda f$ and $\nu_y = y / \lambda f$.
+One way to separate the Fourier components of a wave is by using a lens. A thin spherical lens transforms a plane wave incident on it into a paraboloidal wave focused on a point on the focal plane of the lens (Saleh and Teich Sec. 2.4 \cite{saleh1991}). As shown in \cref{fig:fourier}, a plane wave incident at a small angle $(\theta_x, \theta_y)$ if focused to the point $(x,y) = (\theta_x f, \theta_y f)$, where $f$ is the focal length of the lens. The complex amplitude $g(x,y)$ at $z=f$ is therefore proportional to the Fourier transform of $f(x,y)$ evaluated at $\nu_x = x / \lambda f$ and $\nu_y = y / \lambda f$.
 
 \begin{equation}
     g(x,y) \propto F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right)
@@ -79,13 +79,13 @@ One way to separate the Fourier components of a wave is by using a lens. A thin 
 
 To find the proportionality factor, we trace the propagation of every plane wave in which we have decomposed the input beam through the optical system. Then we integrate over all these plane waves at the output to obtain $g(x,y)$. In the following, we will make use of the Fresnel and paraxial approximations.
 
-A field $F(k_x,k_y)$ can be propagated from the $z=0$ plane to $z=f$ plane by applying a phase factor $e^{-ik_zz}$
+A field $F(k_x,k_y)$ can be propagated from the $z=0$ plane to the $z=f$ plane by applying a phase factor $e^{-ik_zz}$
 \begin{equation}
     G(k_x, k_y) = F(k_x,k_y) e^{-ik_zz} = H(k_x, k_y, z) F(k_x, k_y)
 \end{equation}
 with $k_z = \sqrt{k^2 - k_x^2 - k_y^2}$ and  $H(k_x, k_y, z) = e^{-ik_zz}$. We can now perform the Fresnel approximation, which states that for plane waves travelling at small angles ($k_x, k_y \ll k$),
 \begin{equation}
-    H(k_x, k_y, z) = e^{-ik_zz} = e^{-iz\sqrt{k^2 - k_x^2 - k_y^2}} \approxeq e^{-ikz}e^{i\frac{k_x^2 + k_y^2}{2k}z}
+    H(k_x, k_y, z) = e^{-ik_zz} = e^{-iz\sqrt{k^2 - k_x^2 - k_y^2}} \approx e^{-ikz}e^{i\frac{k_x^2 + k_y^2}{2k}z}
 \end{equation}
 $H$ is defined in the Fourier space, so we can bring it back to the real space applying an inverse Fourier transform
 \begin{equation}
@@ -106,41 +106,38 @@ and the intensity $I(x,y)$ at the focal plane
 To sum up, a lens returns a Fourier transform of the incident beam at a distance equal to the focal length. This can be used to modulate the intensity profile of the beam.
 
 \subsection{Spatial light modulators: the phase plate}
-The theory described above can be used as the  working principle for numerous devices used for spatial light modulation. Among the ways light can be shaped, it is worth mentioning the use of acusto-optic modulators (AOMs), digital micromirror devices (DMDs), liquid crystals spatial light modulators (LC-SLMs) and phaseplates. All these options are good for different purposes. The first three have the advantages to be controllable, allowing the creation of arbitrary shapes simply changing the input signal.
+The theory described above can be used as the working principle of numerous devices used for spatial light modulation. Among the ways light can be shaped, it is worth mentioning the use of acusto-optic modulators (AOMs), digital micromirror devices (DMDs), liquid crystals spatial light modulators (LC-SLMs) and phase plates. All these options are good for different purposes. The first three have the advantage of being controllable, allowing the creation of arbitrary shapes simply changing the input signal. The latter is cheaper, but once it has been manufactured, it cannot be modified.
+The use of an LC-SLM for the creation of a uniform light sheet was investigated by Schmidt in his semester project \cite{schmidt2021}. However, it was found that a phase plate would offer a cheaper and more reliable alternative. These advantages come at the cost of not having the possibility of changing the phase profile at a later moment.
 
-The use of an LC-SLM for the creation of a uniform light sheet was investigated by Schmidt in his semester project \cite{schmidt2021}. However, it was found that a phase plate would offer a cheaper and more reliable alternative. These advantages come at the cost of not having the possibility to change phase profile at a later moment.
+The working principle of a phase plate is very simple. A wave travelling in a transmissive medium has a lower speed than a wave travelling in air. Designing a plate with variable thickness, it is possible to add an arbitrary phase to a beam. The points where the plate is thicker will be delayed with respect to the points where it is thinner. Placing a lens after the plate will result in the desired intensity modulation at the focal plane.
 
-The working principle of a phase plate is very simple. A wave travelling in a transmissive medium has a lower speed than a wave travelling in air. Designing a plate with variable thickness, it is possible to imprint an arbitrary phase to a beam. The points where the plate is thicker will be delayed with respect to the points where it is thinner. Placing a lens after the plate will result in the desired intensity modulation on the focal plane.
-
-One of the simplest example of phase plates is the $0-\pi$ phase plate, shown in \cref{fig:0pi}. The plate is divided in two halves, with the upper half out of phase by a factor of $\pi$ with respect to the lower half. The phase profile is then
+One of the simplest example of phase plates is the $0-\pi$ phase plate, shown in \cref{fig:0pi}. The plate is divided in two halves, with the upper half out of phase by a factor of $\pi$ with respect to the lower half. For a beam propagating in the $x$ direction, the phase profile is then (see \cref{fig:0pi})
 \begin{equation}
-    \phi(x,y) =
+    \phi(y,z) =
     \begin{cases}
-        0 \quad y < 0 \\
-        \pi \quad y > 0
+        0 \quad z < 0 \\
+        \pi \quad z > 0
     \end{cases}
 \end{equation}
-This is the phase plate currently used in the experiment, and it generates the $\text{TEM}_{10}$ mode shown in \cref{fig:tem10}.
+This is the phase plate currently used in the experiment, and it generates the $\text{TEM}_{01}$ mode shown in \cref{fig:tem10}.
 
 \begin{figure}
     \begin{subfigure}[t]{0.4\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth, valign=c]{chapters/chapter_2/figures/0pi}
         \caption{$0-\pi$ phase plate}
-        \label{fig:0pi}
+        \label{fig:0pi_plate}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.6\textwidth}
         \centering
         \includegraphics[height=\textwidth, valign=c]{chapters/chapter_2/figures/tem10_sim.png}
-        \caption{$\text{TEM}_{10}$ mode}
+        \caption{$\text{TEM}_{01}$ mode}
         \label{fig:tem10}
     \end{subfigure}
-    \caption{$\text{TEM}_{10}$ mode generated by o $0-\pi$ phase plate. In the figure on the right, the intensity profile at the focal plane is shown together with the integrated intensity along the two axes.}
+    \caption{$\text{TEM}_{01}$ mode generated by o $0-\pi$ phase plate. In the figure on the right, the intensity profile at the focal plane is shown together with the integrated intensity along the two axes.}
+    \label{fig:0pi}
 \end{figure}
-
-As it is clear from \cref{fig:tem10}, the intensity (and therefore the potential) is not uniform along the $y$ direction. On the contrary, it has Gaussian shape, with a peak at the centre.
-What we would like to achieve is a so-called top-hat potential, shown in \cref{fig:tophat}. For it, a custom-made phase plate was ordered from Holoor. On
 
 \begin{figure}
     \begin{subfigure}{\textwidth}
@@ -153,14 +150,41 @@ What we would like to achieve is a so-called top-hat potential, shown in \cref{f
         \centering
         \includegraphics[width=\textwidth]{chapters/chapter_2/figures/tophatx.png}
         \caption{$y$ direction}
-        \label{fig:tophatx}
+        \label{fig:tophaty}
     \end{subfigure}
     \begin{subfigure}{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{chapters/chapter_2/figures/tophaty.png}
         \caption{$z$ direction}
-        \label{fig:tophaty}
+        \label{fig:tophatz}
     \end{subfigure}
-    \caption{Top-hat potential. The image was provided by Holoor, the manufacturing company.}
+    \caption{Customized phase plate. In the $y$ direction, the intensity follows a "top hat" profile, characterized by a Gaussian ramping up, a flat region, and a symmetric ramping down. In the $z$ direction, the intensity follows the same profile of a $0-\pi$ phase plate. The image was provided by Holoor, the manufacturing company.}
     \label{fig:tophat}
 \end{figure}
+
+As it is clear from \cref{fig:tem10}, the intensity (and therefore the potential) is not uniform along the $y$ direction. On the contrary, it has Gaussian shape, with a peak at the centre.
+What we would like to achieve is a so-called top-hat potential, shown in \cref{fig:tophat}. It differs from the standard $0-\pi$ phase plate in the $y$ direction. Instead of having a Gaussian profile, it initially ramps up from 0 to 1 (in a.u.), then it remains flat in the central region, and it finally decreases back to 0. In the ramp up region, the profile is Gaussian. In the $z$ direction, it generates the same kind of intensity modulation as the $0-\pi$ phase plate. The region we are interested in is the central region. The phase plate was designed to create an intensity profile as uniform as possible, and this is what we have tried to achieve experimentally.
+
+\subsection{Required specifications}
+We now turn our attention towards the specifications that the phase plate has to satisfy in order to be useful for our experiment. The three main aspects we want to focus on are the width of the flat region, the darkness $D$ and the trapping frequency $\omega_z$.
+
+The phase plate was designed to create a flat region of \SI{40}{\micro \meter}, with a ramp up region of \SI{15}{\micro\meter}. The specifications are relative to the intensity profile generated by the phase plate in combination with a lens of focal length $f=\SI{100}{mm}$. However, in the final experiment it is preferable to use a $f=\SI{250}{mm}$ lens. Therefore all the features will be scaled up by a factor of 2.5. For example the flat region will be \SI{100}{\micro\meter} long instead of \SI{40}{\micro\meter}.
+
+The darkness is the most important parameter of the phase plate. It gives us a measure of how dark is the dark region at the centre of the light sheet compared to the bright region around. Taking inspiration from Krinner's PhD thesis \cite{krinner2015b}, we define it as
+\begin{equation}
+    D = \frac{I_\text{node}}{(I_\text{max,1} + I_\text{max,2}) / 2}
+\end{equation}
+where $I_\text{node}$ is the intensity at the nodal plane, and $I_\text{max,1/2}$ is the intensity at the two maxima. For the experiment to work, the darkness has to be on the per mill level. The repulsive laser that creates the 2D channel increases the chemical potential with respects to the reservoirs. If the nodal region is too bright, and therefore the chemical potential too high, the atoms will not be able to pass through the channel, and the transport will be suppressed. According to Krinner's work, for a $0-\pi$ phase plate and typical powers of \SI{1.3}{W}, a darkness of one per mill increases the chemical potential by \SI{70}{nK}, and the transport is not suppressed.
+
+In order to freeze-out the $z$ dimension, the trapping frequency must be high enough. If we approximate the trapping potential in the neighbour of the nodal plane with a second order polynomial
+\begin{equation}
+    U(z) = \oh m \omega_z^2 z^2 + \mathcal{O}(z^4)
+\end{equation}
+we require the trapping energy $\hbar \omega_z$ to be higher than the following energy scales:
+\begin{itemize}
+    \item Fermi energy $E_F \approx \SI{600}{nK} = \SI{12.5}{kHz}$
+    \item Binding energy, estimated to be smaller than the 20\% of the Fermi energy $E_B \approx \SI{120}{nK} = \SI{2.5}{kHz}$
+    \item Temperature $T \approx \SI{60}{nK} = \SI{1.3}{kHz}$
+\end{itemize}
+Therefore, the phase plate was ordered to have a trapping frequency of at least $\omega_z / 2\pi = \SI{30}{kHz}$, much larger that all the other energy scales.
+
