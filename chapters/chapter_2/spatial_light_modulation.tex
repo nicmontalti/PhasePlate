@@ -192,3 +192,15 @@ we require the trapping energy $\hbar \omega_z$ to be higher than the following 
 \end{itemize}
 Therefore, the phase plate was ordered to have a trapping frequency of at least $\omega_z / 2\pi = \SI{30}{kHz}$, much larger that all the other energy scales.
 
+The final goal of using this phase plate is to have a central region as dark and as uniform as possible. The darkness can be evaluated computing $D$ as explained above in \cref{eq:darkness}. The uniformity of the potential depends on two  things: the intensity variation in the central region and the trapping frequency variation. We can understand it by thinking again at the assumption we made on our potential.
+
+Assuming the potential is approximately harmonic, we can write is as
+\begin{equation}
+    U(y,z) = \oh m z^2\omega_z^2(y) + U_0(y)
+\end{equation}
+where we have explicitly indicated the dependency of $\omega_z$ and $U_0$ on $y$. Assuming the atoms are in the ground state, they will feel an effective potential dependent on $y$
+\begin{equation}
+    \label{eq:effectivr_potential}
+    U(y) = \oh \hbar \omega_z(y) + U_0(y)
+\end{equation}
+What we want to minimize is then the variation of $U(y)$ along $y$.
