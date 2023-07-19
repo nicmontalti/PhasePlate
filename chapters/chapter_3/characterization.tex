@@ -1,9 +1,9 @@
 \chapter{Characterization of the phase plate}
-The final goal of this project was to have a complete characterization of the phase plate that we received from the company. We knew its expected behaviour, namely the creation of a top hat potential with the characteristics described in \Cref{sec:slm_phaseplate}. However, it was important to test it to see how it behaves in reality.
+The final goal of this project was to have a complete characterization of the phase plate that we received from the company. We knew its expected behaviour, namely the creation of a top hat potential with the characteristics described in \Cref{sec:slm_phaseplate}. However, it was important to test it to see how it behaved in reality.
 
 \section{Building the experimental setup}
 \subsection{Imaging system}
-In order to characterize the phase plate, the first step was to set up an imaging system. This was necessary to acquire images of the final intensity distribution. Since the expected dimensions of the intensity distribution were of the order of \SI{10}{\micro\meter}, a magnification system was set up. The imaging system was composed of a microscope objective, which magnified the beam, and by a camera. The distance between the two was kept constant by fixing them on a cage. The objective could be moved in the horizontal ($y$) and vertical ($z$) direction by turning two micrometers. The whole system (objective and camera) was mounted on a linear translation stage. The stage could be moved along the $x$ direction to focus the image. A sketch of the setup is shown in \cref{fig:imaging}.
+In order to characterize the phase plate, the first step was to set up an imaging system. This was necessary to acquire images of the final intensity distribution. Since the expected dimensions of the intensity distribution were of the order of \SI{10}{\micro\meter}, a magnification system was assembled. The imaging system was composed of a microscope objective, which magnified the beam, and by a camera. The distance between the two was kept constant by fixing them on a cage. The objective could be moved in the horizontal ($y$) and vertical ($z$) direction by turning two micrometers. The whole system (objective and camera) was mounted on a linear translation stage. The stage could be moved along the $x$ direction to focus the image. A sketch of the setup is shown in \cref{fig:imaging}.
 
 \begin{figure}
     \centering
@@ -52,7 +52,7 @@ Before characterizing the top hat phase plate, the setup was tested on the $0-\p
 
 In order to get good results, it was important that the two cylindrical lenses and the phase plate axes were aligned. To align them, the beam was observed at short and long distances. Acting on the first lens, the beam was rotated in such a way that, when observed at a short distance, its axis was vertical. The same alignment was then performed acting on the second cylindrical lens and looking at the beam at a longer distance. The procedure was repeated, \enquote{walking} the beam, until the two lenses were aligned. The collimation of the beam was ensured by using a shear plate. Finally, the phase plate was aligned rotating its axis in such a way that it was parallel to the beam axis.
 
-The final result is shown in \cref{fig:0pi_image}. The result resembles the expected $\text{TEM}_{01}$ mode shown in \cref{fig:tem10}, but it is clear that it could be optimized, making it more symmetric. In particular, the alignment of the whole setup could have been improved.  However, since the characterization of the $0-\pi$ phase plate was not the goal of the project, the setup was not optimized. Nonetheless, this test was useful to gain familiarity with how phase plates work and with the optics involved in the setup.
+The final result is shown in \cref{fig:0pi_image}. The result resembles the expected $\text{TEM}_{01}$ mode shown in \cref{fig:tem10}, but it is clear that it could be optimized, making it more symmetric. In particular, the alignment of the whole setup could have been improved.  However, since the characterization of the $0-\pi$ phase plate was not the goal of the project, the alignment was not refined. Nonetheless, this test was useful to gain familiarity with how phase plates work and with the optics involved in the setup.
 
 \subsection{Shaping the input beam}
 It had already been reported in Schmidt's work that the most crucial parameter to make the phase plate work is the beam diameter \cite{schmidt2021}. The phase plate was ordered for a diameter of \SI{6}{mm}, so this is the first thing we tried to achieve.
@@ -218,17 +218,20 @@ The results, for three different sizes of the beam, are collected in \cref{fig:f
 
 \section{Characterization}
 \label{sec:characterization}
-Having found a good beam size which we could aim for, we decided to build a telescope that would give us approximately the desired size, and use it to fully characterize the phase plate.
+Having found a good beam size which we could aim for, we decided to assemble a telescope that would give us approximately the desired size, and use it to fully characterize the phase plate. For the characterization of the phase plate we decided to keep using the Schäfter-Kirchhoff \SI{12}{mm} collimator, but instead of expanding the beam with a $\times3$ telescope, we used a $\times2.4$ one. With this setup, we expected a beam with a diameter of $\approx \SI{4.8}{mm}$, size for which we had previously found a good result. The telescope was built with a \SI{-50}{mm} and a \SI{120}{mm} achromatic lenses.
 
-For the characterization of the phase plate we decided to keep using the Schäfter-Kirchhoff \SI{12}{mm} collimator, but instead of expanding the beam with a $\times3$ telescope, we used a $\times2.4$ telescope. With this setup, we expected a beam with a diameter of $\approx \SI{4.8}{mm}$, size for which we had previously found a good result. The telescope was built with a \SI{-50}{mm} and a \SI{120}{mm} achromatic lenses.
+For a complete characterization of the phase plate, it was necessary to analyse its behaviour for different beam sizes and different distances from the focus. It was important to look at the light sheet at different distances from the focus because, despite the focal point being in principle well-defined, finding it was non-trivial. Moreover, we did not know if for our goals a non-perfectly focused beam may have been better than a focused one.
 
 \subsection{Methods}
 \label{sec:characterization_methods}
-For a complete characterization of the phase plate, it was necessary to analyse its behaviour for different beam sizes and different distances from the focus. It was important to look at the light sheet at different distances from the focus because, despite the focal point being in principle well-defined, finding it was non-trivial. Moreover, we did not know if for our goals a non-perfectly focused beam may be better than a focused one.
+Before presenting the results, we offer a brief overview of the methods used to characterize the phase plate. The goal was to define a couple of quantities that would tell us how \enquote{good} was a result compared to another one, allowing us to find the best possible configuration.
+
 
 \subsubsection{Intensity normalization}
 
-For every combination of beam size and distance from the focus, two pictures were taken: a normal (non-satuaretd) picture and a saturated picture. The non-satuaretd picture gave us information on the intensity distribution of the whole light sheet. The saturated picture allowed us to increase the dynamic range of the image in the dark central region, increasing the precision of the measurements. An example of a saturated picture can be found in \cref{fig:parabola_imsat}. To saturate the picture, we increased the exposure time. Taking note of both the exposure time of the saturated picture and of the non-satuaretd one, it was possible to \enquote{normalize} the saturated picture as
+For every combination of beam size and distance from the focus, two pictures were taken: a normal (non-satuaretd) picture and a saturated picture. The non-satuaretd picture gave us information on the intensity distribution of the whole light sheet. The saturated picture allowed us to increase the dynamic range of the image in the dark central region, increasing the precision of the measurements.
+%An example of a saturated picture can be found in \cref{fig:parabola_imsat}.
+To saturate the picture, we increased the exposure time. Taking note of both the exposure time of the saturated picture and of the non-satuaretd one, it was possible to \enquote{normalize} the saturated picture as
 \begin{equation}
     I_\text{s}^\text{norm} = \frac{\tau_\text{ns}}{\tau_\text{s}} I_\text{s}
 \end{equation}
@@ -307,7 +310,7 @@ To compute these quantities, using the saturated picture, we fitted a parabola i
 Pictures were collected for different beam sizes and different distances from the focus. In total, seven beams with diameters between $\approx\SI{4.8}{mm}$ and $\approx\SI{5.5}{mm}$ were considered. For every beam size, seven pictures at seven different distances from the focus were taken. Between every picture, the imaging system was moved by \SI{50}{\micro m}. We defined the focused image as the one where the peaks found by integrating the intensity along the $y$ direction were the closest. In practice, after fitting the $0-\pi$ distribution $I_{0\pi}$ to $I_y(z)$, we chose the image for which $w_e$ was minimized (see \cref{eq:erfi} in \cref{sec:characterization_methods}). An overview of the results is shown in \cref{fig:grid}.
 
 \subsubsection{Analysis along the focus}
-We first present an analysis of the result of the phase plate modulation at different distances from the focus. Below, we present this analysis for the light sheet generated by the beam with a diameter of \SI{5}{mm} (third column in \cref{fig:grid}). An overview of the results is presented in \cref{fig:analysis_focus}.
+We first present an analysis of the result of the phase plate modulation at different distances from the focus. Below, we discuss the case of the light sheet generated by a beam with a diameter of \SI{5}{mm} (third column in \cref{fig:grid}). An overview of the results is shown in \cref{fig:analysis_focus}.
 
 \begin{figure}
     \begin{subfigure}{0.5\textwidth}
@@ -346,13 +349,13 @@ We first present an analysis of the result of the phase plate modulation at diff
     \label{fig:analysis_focus}
 \end{figure}
 
-First, we computed the characteristic sizes of the light sheets, namely the length of the flat region $w_F$ and the distance between the peaks $w_e$. The result is shown in \cref{fig:focus_size}. We notice that the peak distance is minimized for a particular position of the imaging system, which we identify as the focus. On the other hand, the length of the flat region seems to grow linearly while moving along the focus. Then we focused our attention on the trapping frequency $\omega_z$ and its relative variation along the $y$ direction $\Delta \omega_z/\omega_z$. The result, shown in \cref{fig:focus_omega}, confirms that the focus is well-defined, since at that point $\omega_z$ is maximal and its variation minimal. We also computed the average darkness $D$, shown in \cref{fig:focus_darkenss}. From the plot, we notice that the darkness increases along the focus. This means that the closer to the phase plate we look, the darker central region is.
+First, we computed the characteristic sizes of the light sheets, namely the length of the flat region $2w_F$ and the distance between the peaks $2w_e$. The result is shown in \cref{fig:focus_size}. We notice that the peak distance is minimized for a particular position of the imaging system, which we identified as the focus. On the other hand, the length of the flat region seems to grow linearly while moving along the focus. Then we shifted our attention to the trapping frequency $\omega_z$ and its relative variation along the $y$ direction $\Delta \omega_z/\omega_z$. The result, shown in \cref{fig:focus_omega}, confirms that the focus is well-defined, since at that point $\omega_z$ is maximal and its variation minimal. We also computed the average darkness $D$, shown in \cref{fig:focus_darkenss}. From the plot, we notice that the darkness increases along the focus. This means that the closer to the phase plate we look, the darker the central region is.
 
-To evaluate the uniformity of the light sheet, we computed three parameters. The first is the P2P, defined before in \cref{eq:p2p} and plotted in \cref{fig:p2p}. We notice that it seems to grow, approaching one, while moving away from the focus. This would indicate an intensity distribution that gets more uniform far from the focal point. Another way to look at the uniformity of the distribution is to look at the position of the darkest point in the central region. These points are shown in \cref{fig:focus_image} as a white line for the focused image. The standard variation $\Delta z_D$ of their $z$ coordinate, calculated along the $y$ direction, is reported in \cref{fig:p2p}, scaled by $w_e$. We notice that the uniformity evaluated in this way has an opposite behaviour compared to the P2P. In fact, the further we move away from the focus in the direction that maximizes the P2P, the more the vertical position of the darkest points varies. This implies that the atoms would not move in a straight line, but they would follow an irregular path. The third parameter to evaluate the uniformity of the light sheet is the difference $\Delta U$ between the highest and the lowest effective potential felt by the atoms in the flat region, as defined in \cref{eq:effectivr_potential}. Surprisingly, this difference has a maximum at the focal point. It is also interesting to notice that it has an order of magnitude of \SI{5}{\micro K}, not negligible compared to the energies involved in our system. An example of the trend of $U$ and $\omega_z$ along the $y$ direction for the focused image is also presented in \cref{fig:focus_U_omega}.
+To evaluate the uniformity of the light sheet, we computed three parameters. The first is the P2P, defined before in \cref{eq:p2p} and plotted in \cref{fig:p2p}. We notice that it seems to grow, approaching one, while moving away from the focus. This would indicate an intensity distribution that gets more uniform far from the focal point. Another way to look at the uniformity of the distribution is to look at the position of the darkest point in the central region. These points are shown in \cref{fig:focus_image} as a white line for the focused image. The standard variation $\Delta z_D$ of their $z$ coordinate, calculated along the $y$ direction, is reported in \cref{fig:p2p}, scaled by $w_e$. We notice that the uniformity evaluated in this way has an opposite behaviour compared to the P2P. In fact, the further we move away from the focus in the direction that maximizes the P2P, the more the vertical position of the darkest points varies. This implies that the atoms would not move in a straight line, but they would follow an irregular path. The third parameter used to evaluate the uniformity of the light sheet is the difference $\Delta U$ between the highest and the lowest effective potential felt by the atoms in the flat region, as defined in \cref{eq:effectivr_potential}. Surprisingly, this difference has a maximum at the focal point. It is also interesting to notice that it has an order of magnitude of \SI{5}{\micro K}, not negligible compared to the energies involved in our system. An example of the trend of $U$ and $\omega_z$ along the $y$ direction for the focused image is also presented in \cref{fig:focus_U_omega}.
 
 
 \subsubsection{Analysis of the focused images}
-After analysing the behaviour of the phase plate at different distances from the focus, we moved our attention to the influence of the beam size. For this, we only considered focused images (fifth row of \cref{fig:grid}). For these images, we computed the same quantities as above.
+After analysing the behaviour of the phase plate at different distances from the focus, we shifted our attention to the influence of the beam size. For this, we only considered focused images (fifth row of \cref{fig:grid}). For these images, we computed the same quantities as above.
 The results are shown in \cref{fig:analysis_diam}.
 
 The characteristic dimensions of the light sheet $w_F$ and $w_e$ can be observed in \cref{fig:diam_size}. We notice that  the length of the flat region increases with the diameter of the beam, going from a minimum of around \SI{30}{\micro m} for a beam of \SI{4.8}{mm} to a maximum of around \SI{45}{\micro m} for a beam of \SI{5.5}{mm}. This size should be compared with an expected width of \SI{40}{\micro m} for a beam of \SI{6}{mm}. On the other hand, the distance between the two peaks in the $z$ direction shows an opposite behaviour, decreasing with the increase of the beam diameter.
@@ -386,8 +389,8 @@ The uniformity of the light sheet could be evaluated looking at the P2P, at the 
     \label{fig:analysis_diam}
 \end{figure}
 
-\subsection{Additional considerations}
-Below, we report some smaller findings that have proven to be relevant during the characterization process. It may be useful to take them into account when trying to build and align the final setup.
+\subsection{Additional considerations \textcolor{red}{(appendix?)}}
+Below, we present some smaller findings that have proven to be relevant during the characterization process. It may be useful to take them into account when trying to build and align the final setup.
 
 \subsubsection{Alignment of the phase plate}
 In order to characterize the phase plate, the setup had to be correctly aligned. The most important alignment procedure was assuring that the beam hit the centre of the phase plate, in particular in the vertical direction. An incorrect alignment resulted in a central region with bright areas, that would suppress the transport of the atoms.
@@ -413,7 +416,7 @@ To align the phase plate, the intensity distribution was observed with a camera 
 \end{figure}
 
 \subsubsection{Singlet or achromatic focusing lens}
-It was found that the quality of the focusing lens placed after the phase plate is essential for the final result. In particular, we compared the use of a singlet lens and of an achromatic lens. Both lenses had the same focal length of \SI{100}{mm} and the beam incident on the phase was also the same. The result is displayed in \cref{fig:sing_achr}. It is clear that the use of an achromatic lens greatly improves the result.
+It was found that the quality of the focusing lens placed after the phase plate is essential for the final result. In particular, we compared the use of a singlet lens and of an achromatic lens. Both lenses had the same focal length of \SI{100}{mm} and the beam incident on the phase was also the same. The result is displayed in \cref{fig:sing_achr}. It is clear that the use of an achromatic lens greatly improves the result. The intensity distribution obtained with the achromatic lens is more uniform ($\text{P2P} = 0.86$), compared to the one generated by the singlet lens ($\text{P2P} =0.76$).
 \begin{figure}
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -458,4 +461,29 @@ It was found that the quality of the focusing lens placed after the phase plate 
     \label{fig:pin}
 \end{figure}
 
-In order to try to reduce the aberrations introduced by the telescope, the usage of a pinhole placed between the two lenses was investigated for small and large beams. In \cref{fig:pin} we report the result for the $-50/150$ telescope. It is important to notice that since the first lens is a diverging lens, the pinhole is almost completely open, and in fact partially \enquote{cuts} the beam. However, even in this unusual configuration, the pinhole seems to have an effect. In particular, as it can be observed from the figures, the use of the pinhole reduces spherical aberrations and contributes improving the final result, especially for larger beams. On the other hand, for beams close to the desired size (around \SI{5}{mm}), it does not seem to have a huge impact on the final intensity distribution.
+In order to try to reduce the aberrations introduced by the telescope, the usage of a pinhole placed between the two lenses was investigated for small and large beams. In \cref{fig:pin} we present the result for the $-50/150$ telescope. It is important to notice that since the first lens is a diverging lens, the pinhole is almost completely open, and in fact partially \enquote{cuts} the beam. However, even in this unusual configuration, the pinhole seems to have an effect. In particular, as it can be observed from the figures, the use of the pinhole reduces spherical aberrations and contributes improving the final result, especially for larger beams. On the other hand, for beams close to the desired size (around \SI{5}{mm}), it does not seem to have a huge impact on the final intensity distribution.
+
+\subsubsection{Fixing the horizontal dark line}
+In \cref{sec:characterization_methods} it was explained how we computed the quantities used to characterize the phase plate. In particular, for quantities like the trapping frequency or the darkenss, we fitted a parabola along the $z$ direction for every point in the $y$ direction, and extracted the dependency of the parameters on $y$ (e.g. $\omega_z(y), D(y)$ \dots). For this process, the parabolic function used in the fit had three free parameters, namely the three coefficients of a second order polynomial. This means that the vertex of the parabola was allowed to have an arbitrary height (used to compute the darkness $D$) and position (used to compute $\Delta z_D$).
+
+\begin{figure}
+    \centering
+    \hfill
+    \begin{subfigure}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{chapters/chapter_3/figures/fixedline.pdf}
+        \caption{Intensity distribution}
+        \label{fig:int_fixedline}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.5\textwidth}
+        \includegraphics[width=\textwidth]{chapters/chapter_3/figures/trap_fixedline.pdf}
+        \caption{Trapping frequency and effective potential}
+        \label{fig:trap_fixedline}
+    \end{subfigure}
+    \hfill
+    \caption{Analysis of the focused image for a \SI{5}{mm} beam keeping the coordinate of the position of the dark central region fixed. The result should be compared to \cref{fig:focus_image,fig:focus_U_omega}.}
+    \label{fig:fixedline}
+\end{figure}
+
+Another possible approach is to fix the $z$ position of the vertex $z_D$, and fit a function with only two free parameters. In this case, it is logical to set $z_D$ to the position of the minimum of the integrated intensity $I_y(z)$, found fitting the distribution $I_\text{th}(z)$ (cf. \cref{sec:characterization_methods}). The result is shown in \cref{fig:fixedline}. We notice that the irregularity of the intensity is moved from a variation in the $z$ coordinate of the minima to a bigger variation of the trapping frequency and effective potential along the $y$ direction. In particular, both the trapping frequency and the effective potential show variations larger than a factor of two (between 25 and \SI{50}{kHz} for $\omega_z$ and between 12 and \SI{26}{\micro K} for $U$). We consider this method inferior to the one described above, since in reality the atoms would move in the region of lower potential, so following an irregular path, rather than in a straight line.
+

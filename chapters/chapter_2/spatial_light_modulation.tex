@@ -1,8 +1,8 @@
 \chapter{Theoretical background}
-In this chapter we focus on how we can generate an arbitrary potential for our cloud of ultracold atoms. To understand it, we first need to review the basics of quantum optics that explain how atoms and light interact, resulting in a dipole force that can be used to trap the atoms. We then focus on the theory of spatial light modulation. For it, we will present a discussion on Fourier optics and use it to understand how a phase plate can be used for such a purpose.
+In this chapter we focus on how we can generate an arbitrary potential for a cloud of ultracold atoms. To understand it, we first need to review the basics of quantum optics that explain how atoms and light interact. We will see that this interaction creates a dipole force that can be used to trap the atoms. We will then focus on the theory of spatial light modulation. For it, we will present a discussion on Fourier optics and use it to understand how a phase plate can be used for such a purpose.
 
 \section{Atom-light interaction}
-It is well known that atoms can interact with light. At the quantum level, the interaction is usually interpreted as the absorption or emission of photons by the atoms. Despite this picture being accurate, matter can also interact with light through virtual absorption or emission processes, that result in interesting behaviours. For this to happen, the frequency of light must be far detuned from the excitation energy of the atoms. An important effect of this type of interaction is the dipole force exerted by light on atoms. To understand the origin of this force, it is sufficient to remember that photons, besides energy, also carry momentum. When a photon is scattered by an atom, its momentum is transferred, generating an effective force that acts on the latter.
+It is well known that atoms can interact with light. At the quantum level, the interaction is usually interpreted as the absorption or emission of photons by the atoms. Despite this picture being accurate, matter can also interact with light through virtual absorption or emission processes, which have interesting behaviours. For this to happen, the frequency of light must be far detuned from the excitation energy of the atoms. An important effect of this type of interaction is the dipole force exerted by light on atoms. To understand the origin of this force, it is sufficient to remember that photons, besides energy, also carry momentum. When a photon is scattered by an atom, its momentum is transferred, generating an effective force that acts on the latter.
 
 \subsection{The dipole force}
 
@@ -94,7 +94,7 @@ $H$ is defined in the Fourier space, so we can bring it back to the real space a
 
 Now we have to take into account the effect of the lens on the beam. A parabolic lens of focal length $f$ will apply a phasor $\phi(x,y) = \exp(-ik\frac{x^2+y^2}{2f})$ in addition to the phase acquired by the propagation of the beam. Overall, at $z=f$
 \begin{equation}
-    g(x,y) = h(h,y,f) \otimes \left[ \phi(x,y) f(x,y) \right]
+    g(x,y) = h(x,y,f) \otimes \left[ \phi(x,y) f(x,y) \right]
     = \frac{i}{\lambda f} e^{-ikf} F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right)
 \end{equation}
 The proportionality factor is therefore found to be $1/\lambda f$
@@ -192,9 +192,8 @@ we require the trapping energy $\hbar \omega_z$ to be higher than the following 
 \end{itemize}
 Therefore, the phase plate was ordered to have a trapping frequency of at least $\omega_z / 2\pi = \SI{30}{kHz}$, much larger that all the other energy scales.
 
-The final goal of using this phase plate is to have a central region as dark and as uniform as possible. The darkness can be evaluated computing $D$ as explained above in \cref{eq:darkness}. The uniformity of the potential depends on two  things: the intensity variation in the central region and the trapping frequency variation. We can understand it by thinking again at the assumption we made on our potential.
-
-Assuming the potential is approximately harmonic, we can write is as
+The final goal of using this phase plate is to have a central region as dark and as uniform as possible. The darkness can be evaluated computing $D$ as explained above in \cref{eq:darkness}. The uniformity of the potential depends on two  things: the intensity variation in the central region and the trapping frequency variation. We can understand it by thinking again at the assumption we made for the potential.
+Assuming that the potential is approximately harmonic, we can write is as
 \begin{equation}
     U(y,z) = \oh m z^2\omega_z^2(y) + U_0(y)
 \end{equation}
@@ -203,4 +202,4 @@ where we have explicitly indicated the dependency of $\omega_z$ and $U_0$ on $y$
     \label{eq:effectivr_potential}
     U(y) = \oh \hbar \omega_z(y) + U_0(y)
 \end{equation}
-What we want to minimize is then the variation of $U(y)$ along $y$.
+What we want to minimize is then the variation of $U(y)$ along $y$, which will depend both on the variation of $\omega_z(y)$ and of $U_0(y)$.
