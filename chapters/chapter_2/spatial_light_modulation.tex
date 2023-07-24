@@ -6,10 +6,9 @@ It is well known that atoms can interact with light. At the quantum level, the i
 
 \subsection{The dipole force}
 
-To study this force in more detailed, we model the atom as a two level system, where the energy levels are separated by an energy $\hbar \omega_{eg}$. We also consider light made of a single mode of frequency $\omega / 2\pi$, like the light emitted by a laser. The following discussion is adapted from Jonathan Home's lecture notes on Quantum Optics.
-
-We start by writing the interaction Hamiltonian in the dipole approximation
+To study this force in more detailed, we present a discussion adapted from Jonathan Home's lecture notes on quantum optics. Following the standard approach in quantum optics, we model the atom as a two level system, where the energy levels are separated by an energy $\hbar \omega_{eg}$. We also consider light made of a single mode of frequency $\omega / 2\pi$, like the light emitted by a laser. We start by writing the interaction Hamiltonian in the dipole approximation
 \begin{equation}
+    \label{eq:intH}
     H_\text{int} = \vec{d} \cdot \vec{E}(\vec{r})
 \end{equation}
 where $\vec{d}$ is the dipole moment operator, $\vec{E}$ the electric field and $\vec{r}$ the position of the atom. The Hamiltonian of the atom without the interaction term is
@@ -17,22 +16,22 @@ where $\vec{d}$ is the dipole moment operator, $\vec{E}$ the electric field and 
     H_0 = \frac{\hbar \omega_{eg}}{2} \sigma_z + \frac{\vec
         {p}^2}{2m}
 \end{equation}
-where $\sigma_z$ is the third Pauli matrix and $\vec{p}$ is the momentum operator.
+where $\sigma_z$ is the third Pauli matrix, $\vec{p}$ is the momentum operator and $m$ the mass of the atom.
 Furthermore, we consider a classical electric field
 \begin{equation}
+    \label{eq:Efield}
     \vec{E} = \oh E_0 f(\vec{r} ) \left(e^{i( \vec{k}\cdot\vec{r} - \omega t)} + e^{-i( \vec{k}\cdot\vec{r} - \omega t)}  \right) \vec{\epsilon}
 \end{equation}
-where $E_0, \omega$ and $\vec{\epsilon}$ are the field strength, frequency and polarization respectively. The function $f(\vec{r})$ allows the field amplitude to vary spatially. The interaction Hamiltonian can be rewritten as
+where $E_0,$ $\omega$ and $\vec{\epsilon}$ are respectively the field strength, frequency and polarization. The function $f(\vec{r})$ allows the field amplitude to vary spatially. Inserting \cref{eq:Efield} in \cref{eq:intH}, the interaction Hamiltonian can be rewritten as
 \begin{equation}
     H_\text{int} = (\vec{\mu}_{eg} \cdot \hat{\vec{\epsilon}} E_0) \frac{f(\vec{r})}{2} (\sigma_+ + \sigma_{-}) \left(e^{i( \vec{k}\cdot\vec{r} - \omega t)} + e^{-i( \vec{k}\cdot\vec{r} - \omega t)}  \right)
 \end{equation}
-where $\mu_{eg} = \bra{e} \vec{d} \ket{g}$. It is useful to move to the rotating frame with respect to the laser frequency. After transforming the Hamiltonian and performing the rotating wave approximation, we are left with
+where $\mu_{eg} = \bra{e} \vec{d} \ket{g}$. It is now useful to move to the rotating frame with respect to the laser frequency. After transforming the Hamiltonian and performing the rotating wave approximation, we are left with
 \begin{equation}
     H = -\frac{\hbar \delta}{2} \omega_z + \frac{\vec{p}^2}{2m} + \frac{\hbar \Omega(\vec
         r)}{2} \left( \sigma_+ e^{i\vec{k}\cdot \vec{r}} +  \sigma_{-} e^{-i\vec{k}\cdot \vec{r} } \right)
 \end{equation}
 with $\Omega(\vec{r}) = \vec{\mu}_{eg} \cdot \hat{\vec{\epsilon}} E_0 f(\vec{r}) / \hbar$ and $\delta = \omega - \omega_{eg}$.
-
 We can find the resulting force applied on the atom by using Heisenberg's equation of motion
 \begin{multline}
     \vec{F} = \frac{\differential\vec{p}}{\differential t} = \frac{i}{\hbar} \left[ H, \vec{p} \right] \\= - \frac{\hbar}{2} \nabla \Omega(\vec{r}) \left( \sigma_+ e^{i\vec{k}\cdot \vec{r}} +  \sigma_{-} e^{-i\vec{k}\cdot \vec{r} } \right) - \frac{\hbar
@@ -41,10 +40,13 @@ We can find the resulting force applied on the atom by using Heisenberg's equati
 We observe that we get two terms. The first, proportional to the spatial derivative of the field strength, includes a contribution in phase with the light field. It is the term that results in the dipole force exerted by the field on the atom, the one we are interested in. The second term is proportional to the field strength, and it is out of phase of a factor of $\pi$ with respect to the field. It is responsible for the scattering force, essential for cooling atoms. The second term is dominated  by the first for large detuning $\delta$, and it will then be neglected in the following discussion.
 
 We will now make use of two approximation to simplify the calculations. We first make use of a mean-value approximation for the centre-of-mass degree of freedom. This means that we evaluate the internal states operators appearing in $\differential \vec{p} / \differential t$ using the mean position $\vec{r} = \langle \vec{r} \rangle + \langle \vec{v} \rangle t$, where $\vec{v}$ is the velocity of the atom. Moreover, since the timescale on which the internal degrees of freedom of the atom evolve are much faster than the timescale associated to the movement of it, we only consider the steady state solution of the atomic dynamics.
-
 Making use of the approximations explained above, in the limit $\delta  \gg \Omega, \Gamma$, where $\Gamma$ is the decay rate, we find
 \begin{equation}
     \vec{F}_\text{dip} = \left\langle \frac{\differential \vec{p}}{\differential t} \right\rangle = - \frac{\hbar}{2} \frac{\Omega}{\delta} \nabla \Omega
+\end{equation}
+or, in terms of the potential energy,
+\begin{equation}
+    U = \frac{\hbar}{4}\frac{\Omega^2}{\delta}
 \end{equation}
 We notice that the dipole force is proportional to the field strength and its gradient, and inversely proportional to the detuning. Moreover, its sign depends on the sign of the detuning. Red-detuned light ($\delta < 0$) generates an attractive potential and can be used to create optical tweezers. This is exploited in our experiment for the creation of the cigar-shaped cloud. On the other hand, blue-detuned light ($\delta > 0$) generates a repulsive potential. This is what we need for the creation of the 2D channel. In the experiment, we use a \SI{660}{nm} laser, blue-detuned with respect to the Lithium atomic transition of \SI{671}{nm}.
 
@@ -52,23 +54,18 @@ We notice that the dipole force is proportional to the field strength and its gr
 Now that we know how light interacts with atoms, we are interested in the techniques that can be used to arbitrary shape a light beam. At the basis of these techniques there is Forier optics, which will be explained in the next section. We will then look at the different tools that can be used to achieve this goal, focusing on the use of phaseplates.
 
 \subsection{Fourier optics}
-Fourier optics is essential to understanding how spatial light modulation works. The basic idea  is that a lens returns the Fourier transform of an incident beam on its focal plane. This can be used to transform a phase modulation in an intensity modulation. We will now look at this concept in more detail, providing a short introduction to Fourier optics adapted from Saleh and Teich \cite{saleh1991} and Schmidt's previous work \cite{schmidt2021}.
+Fourier optics is essential to understanding how spatial light modulation works. The basic idea  is that a lens returns the Fourier transform of an incident beam on its focal plane. This can be used to transform a phase modulation in an intensity modulation. We will look at this concept in more detail, providing a short introduction to Fourier optics adapted from Saleh and Teich \cite{saleh1991} and Schmidt's previous work \cite{schmidt2021}.
 
 Let's suppose we have a monochromatic wave of wavelength $\lambda$ propagating in the $z$ direction. In the $z=0$ plane, we can denote its complex amplitude with a function $f(x,y)$. The function $f(x,y)$ can be Fourier transformed and decomposed in plane waves propagating in the $x$ and $y$ directions
 \begin{equation}
+    \label{eq:fourier}
     f(x,y) = \int \differential \nu_x \differential \nu_y F(\nu_x, \nu_y) e^{-2\pi i(\nu_xx+\nu_yy)}
 \end{equation}
 where $\nu_x = k_x / 2\pi$, $\nu_y = k_y / 2\pi$ and
 \begin{equation}
     F(\nu_x,\nu_y) = \int \differential x \differential y f(x, y) e^{2\pi i(\nu_xx+\nu_yy)}
 \end{equation}
-Each plane wave travels in a direction $\theta_x = \sin^{-1}(k_x / k) = \sin^{-1}(\lambda \nu_x$) and $\theta_y = \sin^{-1}(k_y / k) = \sin^{-1}(\lambda \nu_y$) and has an amplitude $F(\nu_x, \nu_y)$
-
-One way to separate the Fourier components of a wave is by using a lens. A thin spherical lens transforms a plane wave incident on it into a paraboloidal wave focused on a point on the focal plane of the lens (Saleh and Teich Sec. 2.4 \cite{saleh1991}). As shown in \cref{fig:fourier}, a plane wave incident at a small angle $(\theta_x, \theta_y)$ if focused to the point $(x,y) = (\theta_x f, \theta_y f)$, where $f$ is the focal length of the lens. The complex amplitude $g(x,y)$ at $z=f$ is therefore proportional to the Fourier transform of $f(x,y)$ evaluated at $\nu_x = x / \lambda f$ and $\nu_y = y / \lambda f$.
-
-\begin{equation}
-    g(x,y) \propto F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right)
-\end{equation}
+Each plane wave travels in a direction $(\theta_x, \theta_y)$, where $\theta_i$ is the angle between the direction of propagation and the $z$ axis on the $z-i$ plane, and has an amplitude $F(\nu_x, \nu_y)$. From \cref{eq:fourier}, we find $\theta_x = \sin^{-1}(k_x / k) = \sin^{-1}(\lambda \nu_x$) and $\theta_y = \sin^{-1}(k_y / k) = \sin^{-1}(\lambda \nu_y$).
 
 \begin{figure}
     \centering
@@ -77,8 +74,11 @@ One way to separate the Fourier components of a wave is by using a lens. A thin 
     \label{fig:fourier}
 \end{figure}
 
+One way to separate the Fourier components of a wave is by using a lens. A thin spherical lens transforms a plane wave incident on it into a paraboloidal wave focused on a point on the focal plane of the lens (Saleh and Teich Sec. 2.4 \cite{saleh1991}). As shown in \cref{fig:fourier}, a plane wave incident at a small angle $(\theta_x, \theta_y)$ if focused to the point $(x,y) = (\theta_x f, \theta_y f)$, where $f$ is the focal length of the lens. The complex amplitude $g(x,y)$ at $z=f$ is therefore proportional to the Fourier transform of $f(x,y)$ evaluated at $\nu_x = x / \lambda f$ and $\nu_y = y / \lambda f$.
+\begin{equation}
+    g(x,y) \propto F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right)
+\end{equation}
 To find the proportionality factor, we trace the propagation of every plane wave in which we have decomposed the input beam through the optical system. Then we integrate over all these plane waves at the output to obtain $g(x,y)$. In the following, we will make use of the Fresnel and paraxial approximations.
-
 A field $F(k_x,k_y)$ can be propagated from the $z=0$ plane to the $z=f$ plane by applying a phase factor $e^{-ik_zz}$
 \begin{equation}
     G(k_x, k_y) = F(k_x,k_y) e^{-ik_zz} = H(k_x, k_y, z) F(k_x, k_y)
@@ -91,18 +91,16 @@ $H$ is defined in the Fourier space, so we can bring it back to the real space a
 \begin{equation}
     h(x,y,z) = \mathcal{F}^{-1}(H(k_x, k_y, z)) = \frac{i}{\lambda z} e^{-ikz} e^{ik\frac{x^2+y^2}{2z}}
 \end{equation}
-
 Now we have to take into account the effect of the lens on the beam. A parabolic lens of focal length $f$ will apply a phasor $\phi(x,y) = \exp(-ik\frac{x^2+y^2}{2f})$ in addition to the phase acquired by the propagation of the beam. Overall, at $z=f$
 \begin{equation}
     g(x,y) = h(x,y,f) \otimes \left[ \phi(x,y) f(x,y) \right]
     = \frac{i}{\lambda f} e^{-ikf} F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right)
 \end{equation}
-The proportionality factor is therefore found to be $1/\lambda f$
-and the intensity $I(x,y)$ at the focal plane
+The proportionality factor (up to a phase factor) is therefore found to be $1/\lambda f$,
+and the intensity $I(x,y)$ at the focal plane is
 \begin{equation}
     I(x,y) = \frac{1}{(\lambda f)^2} \left| F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right) \right|^2
 \end{equation}
-
 To sum up, a lens returns a Fourier transform of the incident beam at a distance equal to the focal length. This can be used to modulate the intensity profile of the beam.
 
 \subsection{Spatial light modulators: the phase plate}
@@ -127,8 +125,7 @@ To sum up, a lens returns a Fourier transform of the incident beam at a distance
 The theory described above can be used as the working principle of numerous devices used for spatial light modulation. Among the ways light can be shaped, it is worth mentioning the use of acusto-optic modulators (AOMs), digital micromirror devices (DMDs), liquid crystals spatial light modulators (LC-SLMs) and phase plates. All these options are good for different purposes. The first three have the advantage of being controllable, allowing the creation of arbitrary shapes simply changing the input signal. The latter is cheaper, but once it has been manufactured, it cannot be modified.
 The use of an LC-SLM for the creation of a uniform light sheet was investigated by Schmidt in his semester project \cite{schmidt2021}. However, it was found that a phase plate would offer a cheaper and more reliable alternative. These advantages come at the cost of not having the possibility of changing the phase profile at a later moment.
 
-The working principle of a phase plate is very simple. A wave travelling in a transmissive medium has a lower speed than a wave travelling in air. Designing a plate with variable thickness, it is possible to add an arbitrary phase to a beam. The points where the plate is thicker will be delayed with respect to the points where it is thinner. Placing a lens after the plate will result in the desired intensity modulation at the focal plane.
-
+The working principle of a phase plate is very simple. A wave travelling in a transmissive medium has a lower speed than a wave travelling in air. Designing a plate with variable thickness, it is possible to add an arbitrary phase to the beam. The points where the plate is thicker will be delayed with respect to the points where it is thinner. Placing a lens after the plate will result in the desired intensity modulation at the focal plane.
 One of the simplest example of phase plates is the $0-\pi$ phase plate, shown in \cref{fig:0pi}. The plate is divided in two halves, with the upper half out of phase by a factor of $\pi$ with respect to the lower half. For a beam propagating in the $x$ direction, the phase profile is then (see \cref{fig:0pi})
 \begin{equation}
     \phi(y,z) =
@@ -138,8 +135,6 @@ One of the simplest example of phase plates is the $0-\pi$ phase plate, shown in
     \end{cases}
 \end{equation}
 This is the phase plate currently used in the experiment, and it generates the $\text{TEM}_{01}$ mode shown in \cref{fig:tem10}.
-
-
 \begin{figure}
     \begin{subfigure}{\textwidth}
         \centering
@@ -162,8 +157,7 @@ This is the phase plate currently used in the experiment, and it generates the $
     \caption{Customized phase plate. In the $y$ direction, the intensity follows a "top hat" profile, characterized by a Gaussian ramping up, a flat region, and a symmetric ramping down. In the $z$ direction, the intensity follows the same profile of a $0-\pi$ phase plate. The image was provided by Holoor, the manufacturing company.}
     \label{fig:tophat}
 \end{figure}
-
-As it is clear from \cref{fig:tem10}, the intensity (and therefore the potential) is not uniform along the $y$ direction. On the contrary, it has Gaussian shape, with a peak at the centre.
+As it is clear from \cref{fig:tem10}, the intensity (and therefore the potential) is not uniform along the $y$ direction. On the contrary, it has a Gaussian shape, with a peak at the centre.
 What we would like to achieve is a so-called top-hat potential, shown in \cref{fig:tophat}. It differs from the standard $0-\pi$ phase plate in the $y$ direction. Instead of having a Gaussian profile, it initially ramps up from 0 to 1 (in a.u.), then it remains flat in the central region, and it finally decreases back to 0. In the ramp up region, the profile is Gaussian. In the $z$ direction, it generates the same kind of intensity modulation as the $0-\pi$ phase plate. The region we are interested in is the central region. The phase plate was designed to create an intensity profile as uniform as possible, and this is what we have tried to achieve experimentally.
 
 \subsection{Required specifications}
@@ -182,7 +176,7 @@ where $I_\text{node}$ is the intensity at the nodal plane, and $I_\text{max,1/2}
 In order to freeze-out the $z$ dimension, the trapping frequency must be high enough. If we approximate the trapping potential in the neighbour of the nodal plane with a second order polynomial
 \begin{equation}
     \label{eq:trapping_frequency}
-    U(z) = \oh m \omega_z^2 z^2 + \mathcal{O}(z^4)
+    U(z) = U_0 + \oh m \omega_z^2 z^2 + \mathcal{O}(z^4)
 \end{equation}
 we require the trapping energy $\hbar \omega_z$ to be higher than the following energy scales:
 \begin{itemize}
