@@ -2,11 +2,11 @@
 In this chapter we focus on how we can generate an arbitrary potential for a cloud of ultracold atoms. To understand it, we first need to review the basics of quantum optics that explain how atoms and light interact. We will see that this interaction creates a dipole force that can be used to trap the atoms. We will then focus on the theory of spatial light modulation. For it, we will present a discussion on Fourier optics and use it to understand how a phase plate can be used for such a purpose.
 
 \section{Atom-light interaction}
-It is well known that atoms can interact with light. At the quantum level, the interaction is usually interpreted as the absorption or emission of photons by the atoms. Despite this picture being accurate, matter can also interact with light through virtual absorption or emission processes, which have interesting behaviours. For this to happen, the frequency of light must be far detuned from the excitation energy of the atoms. An important effect of this type of interaction is the dipole force exerted by light on atoms. To understand the origin of this force, it is sufficient to remember that photons, besides energy, also carry momentum. When a photon is scattered by an atom, its momentum is transferred, generating an effective force that acts on the latter.
+At the quantum level, the interaction is usually interpreted as the absorption or emission of photons by the atoms. Despite this picture being accurate, matter can also interact with light through virtual absorption or emission processes, which have interesting behaviours. For this to happen, the frequency of light must be far detuned from the excitation energy of the atoms. An important effect of this type of interaction is the dipole force exerted by light on atoms. To understand the origin of this force, it is sufficient to remember that photons, besides energy, also carry momentum. When a photon is scattered by an atom, its momentum is transferred, generating an effective force that acts on the latter.
 
 \subsection{The dipole force}
 
-To study this force in more detailed, we present a discussion adapted from Jonathan Home's lecture notes on quantum optics. Following the standard approach in quantum optics, we model the atom as a two level system, where the energy levels are separated by an energy $\hbar \omega_{eg}$. We also consider light made of a single mode of frequency $\omega / 2\pi$, like the light emitted by a laser. We start by writing the interaction Hamiltonian in the dipole approximation
+To study this force in more detail, we present a discussion adapted from Jonathan Home's lecture notes on quantum optics. Following the standard approach in quantum optics, we model the atom as a two level system, where the energy levels are separated by an energy $\hbar \omega_{eg}$. We also consider light made of a single mode of frequency $\omega / 2\pi$, like the light emitted by a laser. We start by writing the interaction Hamiltonian in the dipole approximation
 \begin{equation}
     \label{eq:intH}
     H_\text{int} = \vec{d} \cdot \vec{E}(\vec{r})
@@ -51,7 +51,7 @@ or, in terms of the potential energy,
 We notice that the dipole force is proportional to the field strength and its gradient, and inversely proportional to the detuning. Moreover, its sign depends on the sign of the detuning. Red-detuned light ($\delta < 0$) generates an attractive potential and can be used to create optical tweezers. This is exploited in our experiment for the creation of the cigar-shaped cloud. On the other hand, blue-detuned light ($\delta > 0$) generates a repulsive potential. This is what we need for the creation of the 2D channel. In the experiment, we use a \SI{660}{nm} laser, blue-detuned with respect to the Lithium atomic transition of \SI{671}{nm}.
 
 \section{Spatial light modulation}
-Now that we know how light interacts with atoms, we are interested in the techniques that can be used to arbitrary shape a light beam. At the basis of these techniques there is Forier optics, which will be explained in the next section. We will then look at the different tools that can be used to achieve this goal, focusing on the use of phaseplates.
+Now that we know how light interacts with atoms, we are interested in the techniques that can be used to arbitrary shape a light beam. At the basis of these techniques there is Forier optics, which will be explained in the next section. We will then look at the different tools that can be used to achieve this goal, focusing on the use of phase plates.
 
 \subsection{Fourier optics}
 Fourier optics is essential to understanding how spatial light modulation works. The basic idea  is that a lens returns the Fourier transform of an incident beam on its focal plane. This can be used to transform a phase modulation in an intensity modulation. We will look at this concept in more detail, providing a short introduction to Fourier optics adapted from Saleh and Teich \cite{saleh1991} and Schmidt's previous work \cite{schmidt2021}.
@@ -123,7 +123,7 @@ To sum up, a lens returns a Fourier transform of the incident beam at a distance
     \label{fig:0pi}
 \end{figure}
 The theory described above can be used as the working principle of numerous devices used for spatial light modulation. Among the ways light can be shaped, it is worth mentioning the use of acusto-optic modulators (AOMs), digital micromirror devices (DMDs), liquid crystals spatial light modulators (LC-SLMs) and phase plates. All these options are good for different purposes. The first three have the advantage of being controllable, allowing the creation of arbitrary shapes simply changing the input signal. The latter is cheaper, but once it has been manufactured, it cannot be modified.
-The use of an LC-SLM for the creation of a uniform light sheet was investigated by Schmidt in his semester project \cite{schmidt2021}. However, it was found that a phase plate would offer a cheaper and more reliable alternative. These advantages come at the cost of not having the possibility of changing the phase profile at a later moment.
+The use of an LC-SLM for the creation of a uniform light sheet was investigated by Schmidt in his semester project \cite{schmidt2021}. However, it was found that a phase plate would offer a cheaper and more reliable alternative.
 
 The working principle of a phase plate is very simple. A wave travelling in a transmissive medium has a lower speed than a wave travelling in air. Designing a plate with variable thickness, it is possible to add an arbitrary phase to the beam. The points where the plate is thicker will be delayed with respect to the points where it is thinner. Placing a lens after the plate will result in the desired intensity modulation at the focal plane.
 One of the simplest example of phase plates is the $0-\pi$ phase plate, shown in \cref{fig:0pi}. The plate is divided in two halves, with the upper half out of phase by a factor of $\pi$ with respect to the lower half. For a beam propagating in the $x$ direction, the phase profile is then (see \cref{fig:0pi})
@@ -178,7 +178,7 @@ In order to freeze-out the $z$ dimension, the trapping frequency must be high en
     \label{eq:trapping_frequency}
     U(z) = U_0 + \oh m \omega_z^2 z^2 + \mathcal{O}(z^4)
 \end{equation}
-we require the trapping energy $\hbar \omega_z$ to be higher than the following energy scales:
+we require the trapping energy $\hbar \omega_z$ to be higher than the following energy scales \cite{schmidt2021}:
 \begin{itemize}
     \item Fermi energy $E_F \approx \SI{600}{nK} = \SI{12.5}{kHz}$
     \item Binding energy, estimated to be smaller than the 20\% of the Fermi energy $E_B \approx \SI{120}{nK} = \SI{2.5}{kHz}$
@@ -194,6 +194,13 @@ Assuming that the potential is approximately harmonic, we can write is as
 where we have explicitly indicated the dependency of $\omega_z$ and $U_0$ on $y$. Assuming the atoms are in the ground state, they will feel an effective potential dependent on $y$
 \begin{equation}
     \label{eq:effectivr_potential}
-    U(y) = \oh \hbar \omega_z(y) + U_0(y)
+    U(y) = U_0(y) + \oh \hbar \omega_z(y)
 \end{equation}
-What we want to minimize is then the variation of $U(y)$ along $y$, which will depend both on the variation of $\omega_z(y)$ and of $U_0(y)$.
+The first term is due to the intensity at the nodal line not being zero. This will add an offset to the potential felt by the atoms. The second term is the energy of the ground state of a harmonic oscillator, where we are assuming again that we can approximate the potential as parabolic in the proximity of the nodal line (see \cref{fig:offset}). What we want to minimize is then the variation of $U(y)$ along $y$, which will depend both on the variation of $U_0(y)$ and of  $\omega_z(y)$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{chapters/chapter_2/figures/offset.pdf}
+    \caption{Potential energy along the $z$ direction. At the minimum, a non-zero intensity generates a non-zero potential. In the proximity of the minimum the potential can be approximated as harmonic.}
+    \label{fig:offset}
+\end{figure}

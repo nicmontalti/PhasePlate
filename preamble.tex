@@ -18,7 +18,7 @@
 \usepackage{physics}
 \usepackage[version=4]{mhchem}
 \usepackage{siunitx}
-
+\usepackage{mathtools}
 \usepackage{float}
 
 % per pezzi di codice
@@ -79,7 +79,7 @@
 \usepackage{pgf}
 \usepackage{tikz}
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.18} 
+\pgfplotsset{compat=1.18}
 \usepgfplotslibrary{external}
 \tikzexternalize
 \tikzsetexternalprefix{figures/}
@@ -102,6 +102,7 @@
 \newcommand{\rrp}[1]{#1(\vec{r}')}
 \newcommand{\sches}{Schr\"{o}dinger equations\xspace}
 \newcommand{\erfi}{\text{erfi}}
+\DeclareMathOperator{\diag}{diag}
 
 \DeclareSIUnit\angstrom{\protect \text {Å}}
 \DeclareSIUnit{\bohr}{\mu_B}
