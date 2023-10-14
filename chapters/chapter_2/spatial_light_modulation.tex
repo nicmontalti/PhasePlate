@@ -9,7 +9,7 @@ At the quantum level, the interaction is usually interpreted as the absorption o
 To study this force in more detail, we present a discussion adapted from Jonathan Home's lecture notes on quantum optics. Following the standard approach in quantum optics, we model the atom as a two level system, where the energy levels are separated by an energy $\hbar \omega_{eg}$. We also consider light made of a single mode of frequency $\omega / 2\pi$, like the light emitted by a laser. We start by writing the interaction Hamiltonian in the dipole approximation
 \begin{equation}
     \label{eq:intH}
-    H_\text{int} = - \vec{d} \cdot \vec{E}(\vec{r})
+    H_\text{int} = -\vec{d} \cdot \vec{E}(\vec{r})
 \end{equation}
 where $\vec{d}$ is the dipole moment operator, $\vec{E}$ the electric field and $\vec{r}$ the position of the atom. The Hamiltonian of the atom without the interaction term is
 \begin{equation}
@@ -24,7 +24,7 @@ Furthermore, we consider a classical electric field
 \end{equation}
 where $E_0,$ $\omega$ and $\vec{\epsilon}$ are respectively the field strength, frequency and polarization. The function $f(\vec{r})$ allows the field amplitude to vary spatially. Inserting \cref{eq:Efield} in \cref{eq:intH}, the interaction Hamiltonian can be rewritten as
 \begin{equation}
-    H_\text{int} = (\vec{\mu}_{eg} \cdot \hat{\vec{\epsilon}} E_0) \frac{f(\vec{r})}{2} (\sigma_+ + \sigma_{-}) \left(e^{i( \vec{k}\cdot\vec{r} - \omega t)} + e^{-i( \vec{k}\cdot\vec{r} - \omega t)}  \right)
+    H_\text{int} = -(\vec{\mu}_{eg} \cdot \hat{\vec{\epsilon}} E_0) \frac{f(\vec{r})}{2} (\sigma_+ + \sigma_{-}) \left(e^{i( \vec{k}\cdot\vec{r} - \omega t)} + e^{-i( \vec{k}\cdot\vec{r} - \omega t)}  \right)
 \end{equation}
 where $\mu_{eg} = \bra{e} \vec{d} \ket{g}$. It is now useful to move to the rotating frame with respect to the laser frequency. After transforming the Hamiltonian and performing the rotating wave approximation, we are left with
 \begin{equation}
@@ -37,7 +37,7 @@ We can find the resulting force applied on the atom by using Heisenberg's equati
     \vec{F} = \frac{\differential\vec{p}}{\differential t} = \frac{i}{\hbar} \left[ H, \vec{p} \right] \\= - \frac{\hbar}{2} \nabla \Omega(\vec{r}) \left( \sigma_+ e^{i\vec{k}\cdot \vec{r}} +  \sigma_{-} e^{-i\vec{k}\cdot \vec{r} } \right) - \frac{\hbar
     }{2} \Omega(\vec{r}) i \vec{k} \left( \sigma_+ e^{i\vec{k}\cdot \vec{r}} -  \sigma_{-} e^{-i\vec{k}\cdot \vec{r} } \right)
 \end{multline}
-We observe that we get two terms. The first, proportional to the spatial derivative of the field strength, includes a contribution in phase with the light field. It is the term that results in the dipole force exerted by the field on the atom, the one we are interested in. The second term is proportional to the field strength, and it is out of phase of a factor of $\pi$ with respect to the field. It is responsible for the scattering force, essential for cooling atoms. The second term is dominated  by the first for large detuning $\delta$, and it will then be neglected in the following discussion.
+We observe that we get two terms. The first, proportional to the spatial derivative of the field strength, includes a contribution in phase with the light field. It is the term that results in the dipole force exerted by the field on the atom, the one we are interested in. The second term is proportional to the field strength, and it has an operator where the two components $\sigma_+$ and $\sigma_-$ have an additional phase difference of $\pi$. It is responsible for the scattering force, essential for cooling atoms. The second term is dominated  by the first for large detuning $\delta$, and it will then be neglected in the following discussion.
 
 We will now make use of two approximation to simplify the calculations. We first make use of a mean-value approximation for the centre-of-mass degree of freedom. This means that we evaluate the internal states operators appearing in $\differential \vec{p} / \differential t$ using the mean position $\vec{r} = \langle \vec{r} \rangle + \langle \vec{v} \rangle t$, where $\vec{v}$ is the velocity of the atom. Moreover, since the timescale on which the internal degrees of freedom of the atom evolve are much faster than the timescale associated to the movement of it, we only consider the steady state solution of the atomic dynamics.
 Making use of the approximations explained above, in the limit $\delta  \gg \Omega, \Gamma$, where $\Gamma$ is the decay rate, we find
@@ -74,7 +74,7 @@ Each plane wave travels in a direction $(\theta_x, \theta_y)$, where $\theta_i$ 
     \label{fig:fourier}
 \end{figure}
 
-One way to separate the Fourier components of a wave is by using a lens. A thin spherical lens transforms a plane wave incident on it into a paraboloidal wave focused on a point on the focal plane of the lens (Saleh and Teich Sec. 2.4 \cite{saleh1991}). As shown in \cref{fig:fourier}, a plane wave incident at a small angle $(\theta_x, \theta_y)$ if focused to the point $(x,y) = (\theta_x f, \theta_y f)$, where $f$ is the focal length of the lens. The complex amplitude $g(x,y)$ at $z=f$ is therefore proportional to the Fourier transform of $f(x,y)$ evaluated at $\nu_x = x / \lambda f$ and $\nu_y = y / \lambda f$.
+One way to separate the Fourier components of a wave is by using a lens. A thin spherical lens transforms a plane wave incident on it into a paraboloidal wave focused on a point on the focal plane of the lens (Saleh and Teich Sec. 2.4 \cite{saleh1991}). As shown in \cref{fig:fourier}, a plane wave incident at a small angle $(\theta_x, \theta_y)$ is focused to the point $(x,y) = (\theta_x f, \theta_y f)$, where $f$ is the focal length of the lens. The complex amplitude $g(x,y)$ at $z=f$ is therefore proportional to the Fourier transform of $f(x,y)$ evaluated at $\nu_x = x / \lambda f$ and $\nu_y = y / \lambda f$.
 \begin{equation}
     g(x,y) \propto F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right)
 \end{equation}
@@ -91,15 +91,15 @@ $H$ is defined in the Fourier space, so we can bring it back to the real space a
 \begin{equation}
     h(x,y,z) = \mathcal{F}^{-1}(H(k_x, k_y, z)) = \frac{i}{\lambda z} e^{-ikz} e^{ik\frac{x^2+y^2}{2z}}
 \end{equation}
-Now we have to take into account the effect of the lens on the beam. A parabolic lens of focal length $f$ will apply a phasor $\phi(x,y) = \exp(-ik\frac{x^2+y^2}{2f})$ in addition to the phase acquired by the propagation of the beam. Overall, at $z=f$, the field is given by the convolution of the two terms
+Now we have to take into account the effect of the lens on the beam. A parabolic lens of focal length $f$ will apply a phasor $\phi(x,y) = \exp(ik\frac{x^2+y^2}{2f})$ in addition to the phase acquired by the propagation of the beam. Overall, at $z=f$, the field is given by the convolution of the two terms
 \begin{equation}
     g(x,y) = h(x,y,f) \otimes \left[ \phi(x,y) f(x,y) \right]
-    = \frac{i}{\lambda f} e^{-ikf} F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right)
+    = \frac{i}{\lambda f} e^{-ikf} e^{ik \frac{x^2+y^2}{2f}} F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right)
 \end{equation}
 The proportionality factor (up to a phase factor) is therefore found to be $1/\lambda f$,
 and the intensity $I(x,y)$ at the focal plane is
 \begin{equation}
-    I(x,y) = \frac{1}{(\lambda f)^2} \left| F\left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right) \right|^2
+    I(x,y) = \frac{1}{(\lambda f)^2} \left| F \left(\frac{x}{\lambda f}, \frac{y}{\lambda f}\right) \right|^2
 \end{equation}
 To sum up, a lens returns a Fourier transform of the incident beam at a distance equal to the focal length. This can be used to modulate the intensity profile of the beam.
 
